@@ -34,8 +34,14 @@ public class StudentController {
 		return new ResponseEntity<>(iStudentService.fetchAllStudents(), HttpStatus.CREATED);
 	}
 
-	@DeleteMapping("deletebyid/{id}")
+	@DeleteMapping("/deletebyid/{id}")
 	public ResponseEntity<?> deleteFunction(@PathVariable int id) {
 		return new ResponseEntity<>(iStudentService.deleteStudent(id), HttpStatus.OK);
 	}
+
+	@GetMapping("/fetchbyid/{id}")
+	public ResponseEntity<?> fetchByIdFunction(@PathVariable int id){
+		return new ResponseEntity<>(iStudentService.fetchStudentById(id), HttpStatus.OK);
+	}
+
 }
