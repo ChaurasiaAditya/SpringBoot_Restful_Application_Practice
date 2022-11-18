@@ -11,4 +11,6 @@ public interface IStudentService {
 
 	List<Student> fetchAllStudents();
 
+	Student fetchStudent();
+
 }
