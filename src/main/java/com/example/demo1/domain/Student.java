@@ -54,4 +54,14 @@ public class Student {
 	public void setMark(int mark) {
 		this.mark = mark;
 	}
+
+	@Override
+	public String toString() {
+		return "Student{" +
+			"id=" + id +
+			", name='" + name + '\'' +
+			", Address='" + Address + '\'' +
+			", mark=" + mark +
+			'}';
+	}
 }
