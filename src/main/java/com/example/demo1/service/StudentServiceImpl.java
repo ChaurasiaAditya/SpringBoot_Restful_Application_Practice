@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class StudentServiceImpl implements IStudentService{
+public class StudentServiceImpl implements IStudentService {
 	private final StudentRepository studentRepository;
 
 	@Autowired
@@ -42,7 +42,6 @@ public class StudentServiceImpl implements IStudentService{
 
 	@Override
 	public Optional<Student> fetchStudentById(int id) {
-		return  studentRepository.findById(id);
+		return studentRepository.findById(id);
 	}
-
 }

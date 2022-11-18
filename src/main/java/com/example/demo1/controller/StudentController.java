@@ -31,7 +31,7 @@ public class StudentController {
 
 	@GetMapping("/fetchallstudents")
 	public ResponseEntity<?> fetchFunction() {
-		return new ResponseEntity<>(iStudentService.fetchAllStudents(), HttpStatus.CREATED);
+		return new ResponseEntity<>(iStudentService.fetchAllStudents(), HttpStatus.OK);
 	}
 
 	@DeleteMapping("/deletebyid/{id}")
@@ -40,8 +40,7 @@ public class StudentController {
 	}
 
 	@GetMapping("/fetchbyid/{id}")
-	public ResponseEntity<?> fetchByIdFunction(@PathVariable int id){
+	public ResponseEntity<?> fetchByIdFunction(@PathVariable int id) {
 		return new ResponseEntity<>(iStudentService.fetchStudentById(id), HttpStatus.OK);
 	}
-
 }

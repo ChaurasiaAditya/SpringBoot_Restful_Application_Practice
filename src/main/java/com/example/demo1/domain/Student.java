@@ -62,11 +62,6 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student{" +
-			"id=" + id +
-			", name='" + name + '\'' +
-			", address='" + address + '\'' +
-			", marks=" + marks +
-			'}';
+		return "Student{" + "id=" + id + ", name='" + name + '\'' + ", address='" + address + '\'' + ", marks=" + marks + '}';
 	}
 }
