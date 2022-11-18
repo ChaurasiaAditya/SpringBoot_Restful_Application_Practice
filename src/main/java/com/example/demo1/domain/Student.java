@@ -8,4 +8,8 @@
 package com.example.demo1.domain;
 
 public class Student {
+	private int id;
+	private String name;
+	private  String Address;
+	private int mark;
 }
