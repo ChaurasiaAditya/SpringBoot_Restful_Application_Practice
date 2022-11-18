@@ -12,9 +12,7 @@ import com.example.demo1.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -27,7 +25,17 @@ public class StudentController {
 	}
 
 	@PostMapping("/addstudent")
-	public ResponseEntity<?> saveFunction(Student student) {
-		return new ResponseEntity<>( iStudentService.addStudent(student), HttpStatus.CREATED);
+	public ResponseEntity<?> saveFunction(@RequestBody Student student) {
+		return new ResponseEntity<>(iStudentService.addStudent(student), HttpStatus.CREATED);
+	}
+
+	@GetMapping("/fetchallstudents")
+	public ResponseEntity<?> fetchFunction() {
+		return new ResponseEntity<>(iStudentService.fetchAllStudents(), HttpStatus.CREATED);
+	}
+
+	@DeleteMapping("deletebyid/{id}")
+	public ResponseEntity<?> deleteFunction(@PathVariable int id) {
+		return new ResponseEntity<>(iStudentService.deleteStudent(id), HttpStatus.OK);
 	}
 }
