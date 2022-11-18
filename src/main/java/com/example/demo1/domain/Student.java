@@ -12,4 +12,14 @@ public class Student {
 	private String name;
 	private  String Address;
 	private int mark;
+
+	public Student() {
+	}
+
+	public Student(int id, String name, String address, int mark) {
+		this.id = id;
+		this.name = name;
+		Address = address;
+		this.mark = mark;
+	}
 }
