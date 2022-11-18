@@ -24,17 +24,18 @@ public class StudentServiceImpl implements IStudentService{
 	}
 
 	@Override
-	public boolean addStudent(Student student) {
-		return false;
+	public Student addStudent(Student student) {
+		return studentRepository.save(student);
 	}
 
 	@Override
 	public boolean deleteStudent(int id) {
+		studentRepository.deleteById(id);
 		return false;
 	}
 
 	@Override
 	public List<Student> fetchAllStudents() {
-		return null;
+		return (List<Student>) studentRepository.findAll();
 	}
 }
