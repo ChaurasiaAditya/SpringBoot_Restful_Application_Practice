@@ -7,20 +7,25 @@
  */
 package com.example.demo1.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Student {
+	@Id
 	private int id;
 	private String name;
-	private  String Address;
-	private int mark;
+	private String address;
+	private double marks;
 
 	public Student() {
 	}
 
-	public Student(int id, String name, String address, int mark) {
+	public Student(int id, String name, String address, double marks) {
 		this.id = id;
 		this.name = name;
-		Address = address;
-		this.mark = mark;
+		this.address = address;
+		this.marks = marks;
 	}
 
 	public int getId() {
@@ -40,19 +45,19 @@ public class Student {
 	}
 
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
 
-	public int getMark() {
-		return mark;
+	public double getMarks() {
+		return marks;
 	}
 
-	public void setMark(int mark) {
-		this.mark = mark;
+	public void setMarks(double marks) {
+		this.marks = marks;
 	}
 
 	@Override
@@ -60,8 +65,8 @@ public class Student {
 		return "Student{" +
 			"id=" + id +
 			", name='" + name + '\'' +
-			", Address='" + Address + '\'' +
-			", mark=" + mark +
+			", address='" + address + '\'' +
+			", marks=" + marks +
 			'}';
 	}
 }
