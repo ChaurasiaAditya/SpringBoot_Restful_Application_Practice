@@ -21,12 +21,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class StudentController {
 	private final IStudentService iStudentService;
 
-//	@Autowired
+	@Autowired
 	public StudentController(IStudentService iStudentService) {
 		this.iStudentService = iStudentService;
 	}
 
-//	@PostMapping("/addstudent")
+	@PostMapping("/addstudent")
 	public ResponseEntity<?> saveFunction(Student student) {
 		return new ResponseEntity<>( iStudentService.addStudent(student), HttpStatus.CREATED);
 	}
