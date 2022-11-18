@@ -13,10 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentServiceImpl implements IStudentService{
-	private StudentRepository studentRepository;
+	private final StudentRepository studentRepository;
 
 	@Autowired
 	public StudentServiceImpl(StudentRepository studentRepository) {
@@ -38,4 +39,10 @@ public class StudentServiceImpl implements IStudentService{
 	public List<Student> fetchAllStudents() {
 		return (List<Student>) studentRepository.findAll();
 	}
+
+	@Override
+	public Optional<Student> fetchStudentById(int id) {
+		return  studentRepository.findById(id);
+	}
+
 }
